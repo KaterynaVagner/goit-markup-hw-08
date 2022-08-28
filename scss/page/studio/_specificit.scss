@@ -1,0 +1,59 @@
+//!======================  Specificit/ Специфика  ===================================================!
+.specificit {
+    padding-top: 0;
+}
+
+// .section {}
+// .specificit__container {}
+
+.specificit__titel {
+    @extend%titel-main;
+    color: $color__one;
+    margin-bottom: 50px;
+}
+
+// .titel {}
+// .specificit__list {}
+
+.gallery-specificit {
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+        position: relative;
+
+        max-width: 370px;
+        width: 50%;
+
+        &:not(:last-child) {
+            margin: 0px 30px 0px 0px;
+        }
+    }
+    &__img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    &__overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 27px 82px;
+
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.14;
+        text-align: center;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+
+        color: $color__four;
+        background-color: #2f303ab7;
+    }
+}
+/*=======================================  Adaptive  ==========================================*/
+@media (max-width: 1199px ) {
+    .specificit {
+        display: none;
+    }
+}

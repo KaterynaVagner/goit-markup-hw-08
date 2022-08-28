@@ -1,0 +1,61 @@
+.logotip {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    color: #2196F3;
+}
+
+.section {
+    padding: 94px 0px 94px 0px;
+}
+
+// ======================================================
+
+%header-nav-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+}
+
+%header-contacts-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+}
+// ======================================================
+%titel-main{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.16;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+// ======================================================
+%footer-address__link {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+}
+%titel-footer {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+//!======================  Color  ====================== !
+$color__one: #212121;
+$color__two: #757575;
+$color__three: #AFB1B8;
+$color__four: #FFFFFF;
+$color__five: #2196F3;
+$color__six: #2F303A;
+
+$color__seven: #ffffff99;
+$color__eight:#188CE8;

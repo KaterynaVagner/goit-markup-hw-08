@@ -1,0 +1,73 @@
+//!======================  Подключение шрифтов/ Connecting Fonts  ===================================!
+// &display=swap - добавить при подключении через плагин
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular,500,700,900&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Raleway:700&display=swap);
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+// Подключить если есть локальные файлы шрифтов
+// import "fonts/fonts";
+
+//!======================  Подключение Нормалайза/ Connecting Normalize  ============================!
+@import "./base/normalize";
+
+//!======================  Подключение Oбнуления/ Connecting Reset  =================================!
+@import "./base/reset";
+
+/*=================================   Indent caps,body,footer  =====================================*/
+body {
+    height: 100%;
+}
+
+.wrapper {
+    overflow: hidden;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+/*=================================  Bounding container  ===========================================*/
+[class*="__container"] {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+//!======================  Подключение шрифтов/ Connecting Fonts  ===================================!
+//!======================  Подключение Переменных/ Connecting Variables  ============================!
+@import "./utils/_variable";
+//!======================  Подключение Миксинов/ Connecting Mixinov  ================================!
+//!======================  Подключение иконочных шрифтов/ Connecting Icon Fonts  ====================!
+// Подключить если есть файл иконочного шрифта
+// @import "fonts/icons";
+
+//!======================  Header/ Шапка сайта  =====================================================!
+@import "./components/header";
+//!======================  Burger-Menu  =============================================================!
+@import "./components/burger-menu";
+//!======================  Footer/ Подвал сайта  ====================================================!
+@import "./components/footer";
+//!======================  Modal-Studio/ Модальное окно  ============================================!
+@import "./components/modal-studio";
+//!======================  Hero  ====================================================================!
+@import "./page/studio/hero";
+//!======================  Peculiarities/ Особенности  ==============================================!
+@import "./page/studio/peculiarities";
+//!======================  Specificit/ Специфика  ===================================================!
+@import "./page/studio/specificit";
+//!======================  Our-Team/ Наша команда  ==================================================!
+@import "./page/studio/our-team";
+//!======================  Permanent-Clients/ Постоянные клиенты  ===================================!
+@import "./page/studio/permanent-clients";
+//!======================  Menu-Portfolio/ Меню-Портфолио  ==========================================!
+@import "./page/portfolio/menu-portfolio";
+//!======================  Columns-Portfolio/ Колонки-Портфолио  ====================================!
+@import "./page/portfolio/columns-portfolio";
+//!======================  Adaptive  ================================================================!
+@import "./utils/adaptive";

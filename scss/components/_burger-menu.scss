@@ -1,0 +1,211 @@
+//!======================  Burger-Menu  =============================================================!
+body._lock {
+    overflow: hidden;
+}
+
+.header-burger__icon {
+    display: none;
+}
+
+.header-burger__body {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .header-burger {
+        &__icon {
+            position: relative;
+
+            display: block;
+            width: 30px;
+            height: 28px;
+
+            cursor: pointer;
+            z-index: 2;
+
+            span,
+            &::before,
+            &::after {
+                position: absolute;
+                left: 0;
+                height: 15%;
+                width: 100%;
+                transition: all 0.3s ease 0s;
+                background-color: $color__one;
+            }
+
+            &::before,
+            &::after {
+                content: "";
+            }
+
+            &::before {
+                top: 3px;
+            }
+
+            &::after {
+                bottom: 3px;
+            }
+
+            span {
+                top: 50%;
+                transform: scale(1) translate(0px, -50%);
+            }
+
+            &._active span {
+                transform: scale(0) translate(0px, -50%);
+            }
+
+            &._active::before {
+                top: 49%;
+                transform: rotate(-45deg) translate(0px, -50%);
+            }
+
+            &._active::after {
+                bottom: 47%;
+                transform: rotate(45deg) translate(0px, 50%);
+            }
+        }
+
+        &__body {
+            position: fixed;
+
+            display: block;
+            top: 0;
+            left: -100%;
+
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            padding: 47px 44px 47px 38px;
+            background-color: #FFFFFF;
+
+            transition: left 0.3s ease 0s;
+            overflow: auto;
+            z-index: 1;
+
+            &._active {
+                left: auto;
+                top: 0;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+    .nav-burger {
+        margin: 0px 0px 30px 0px;
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__item {
+            &:not(:last-child) {
+                margin: 0px 0px 32px 0px;
+            }
+        }
+
+        &__link {
+            font-weight: 500;
+            font-size: 40px;
+            line-height: 1.17;
+            text-align: center;
+            letter-spacing: 0.02em;
+
+            color: $color__one;
+
+            &:hover,
+            &:focus {
+                color: $color__five;
+            }
+        }
+    }
+
+    .burger-contacts {
+        display: flex;
+        flex-direction: column;
+        margin: 0px 0px 64px 0px;
+
+        &__item {
+            &:not(:last-child) {
+                margin: 0px 0px 32px 0px;
+            }
+        }
+
+        &__link {
+            font-weight: 500;
+            font-size: 34px;
+            line-height: 1.25;
+            letter-spacing: 0.02em;
+            color: $color__five;
+        }
+
+        &__link-m {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 1.16;
+            letter-spacing: 0.02em;
+            color: $color__two;
+        }
+    }
+
+    .burger-socail {
+        display: flex;
+
+        &__item {
+            position: relative;
+
+            &:not(:last-child) {
+                margin: 0px 20px 0px 0px;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: -20px;
+                    bottom: 50%;
+                    display: block;
+                    width: 22px;
+                    height: 1px;
+                    background-color: rgba(33, 33, 33, 0.2);
+                    border-radius: 2px;
+                    transform: rotate(90deg);
+                }
+            }
+
+        }
+
+        &__link {
+
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.22;
+            letter-spacing: 0.02em;
+            color: $color__five;
+        }
+    }
+}
+
+@media (max-width: 410px) {
+
+    .burger-socail {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -10px;
+
+        &__item {
+            padding: 10px;
+        }
+    }
+
+    .burger-contacts {
+        &__link {
+            font-size: 27px;
+        }
+    }
+}

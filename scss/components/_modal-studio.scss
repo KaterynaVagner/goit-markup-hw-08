@@ -1,0 +1,302 @@
+//!======================  Modal-Studio/ Модальное окно  ============================================!
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000033;
+    z-index: 10;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: scroll;
+
+    .modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        min-width: 528px;
+        min-height: 580px;
+        padding: 40px;
+        background: $color__four;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+    }
+}
+
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.form-modal {
+    max-width: 448px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+
+    &__btn-close {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        color: $color__one;
+        background-color: transparent;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover,
+        &:focus {
+            color: $color__five;
+        }
+    }
+
+    &__btn-icon-close {
+        fill: currentColor;
+    }
+
+    &__titel-modal {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.15;
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: $color__one;
+
+        margin-bottom: 12px;
+    }
+}
+
+.list-modal {
+    &__item {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        &:nth-child(-n + 3) {
+            margin-bottom: 10px;
+        }
+
+        &:nth-child(4) {
+            margin-bottom: 20px;
+        }
+
+        &:nth-child(5) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.16;
+        letter-spacing: 0.01em;
+        color: $color__two;
+
+        margin-bottom: 4px;
+    }
+
+    &__style-user {
+        padding: 11px 36px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        border-radius: 4px;
+
+        &:focus {
+            border-color: $color__five;
+        }
+    }
+
+    &__icon-input {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &__icon {
+        fill: currentColor;
+    }
+
+    &__style-textarea {
+        padding: 12px 16px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        border-radius: 4px;
+        resize: none;
+
+        &::placeholder {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.16;
+            letter-spacing: 0.01em;
+            color: rgba(117, 117, 117, 0.5);
+        }
+
+        &:focus {
+            border-color: $color__five;
+        }
+    }
+
+    &__text-mailing-modal {
+        display: inline-flex;
+        align-items: center;
+
+        font-weight: 400;
+        line-height: 1.71;
+        letter-spacing: 0.03em;
+        color: $color__two;
+
+        resize: none;
+    }
+
+    &__style-checkbox {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
+
+    &__style-checkbox-icon {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        border: 2px solid #212121;
+        border-radius: 4px;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            background-image 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &__link-checkbox {
+        text-decoration-line: underline;
+        color: $color__five;
+        margin: 0px 0px 0px 5px;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+.modal-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal-btn__btn-modal {
+        max-width: 200px;
+
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.88;
+        letter-spacing: 0.06em;
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding: 10px 55px;
+
+        color: $color__four;
+        background: $color__five;
+
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover,
+        &:focus {
+            background-color: $color__eight;
+        }
+    }
+}
+
+.list-modal__style-user:focus+.list-modal__icon-input {
+    color: #2196F3;
+}
+
+.list-modal__style-checkbox:checked+.list-modal__style-checkbox-icon {
+    border-color: transparent;
+    background-color: #2196F3;
+    background-image: url(../img/home/modal/icon-check.svg);
+    background-size: contain;
+    background-origin: border-box;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+//!======================  Adaptive  ================================================================!
+@media (max-width: 1199px) {
+    .backdrop {
+        .modal {
+            min-width: 450px;
+        }
+
+    }
+
+    .form-modal {
+        max-width: 370px;
+        width: 100%;
+
+        .form-modal__titel-modal {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+    }
+
+    .list-modal__text-mailing-modal {
+        font-size: 12px;
+        line-height: 1.16;
+    }
+}
+
+@media (max-width: 479px) {
+    .backdrop {
+        .modal {
+            padding: 20px;
+            min-width: 380px;
+        }
+
+    }
+
+    .form-modal {
+        .form-modal__titel-modal {
+            font-size: 18px;
+        }
+    }
+
+    .list-modal__text-mailing-modal {
+        font-size: 12px;
+
+    }
+
+    .list-modal__text-mailing-modal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 410px) {
+    .backdrop {
+        .modal {
+            padding: 35px 10px 20px;
+            min-width: 320px;
+            width: 100%;
+        }
+
+    }
+}
